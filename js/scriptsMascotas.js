@@ -76,7 +76,7 @@ obtenerMascotasDatos(API_Mascotas, function crearAnimales(error,data){
             direccionPerros.push(data.mascotas[i].address);
             caracteristicaPerros.push(data.mascotas[i].feature);
             personalidadPerros.push(data.mascotas[i].personality);
-            nombreAutorPerro.push(data.mascotas[i].author.id);
+            nombreAutorPerro.push(data.mascotas[i].author.name);
             imagenAutorPerro.push(data.mascotas[i].author.image);
             edadPerro.push(data.mascotas[i].age);
         }
@@ -84,6 +84,15 @@ obtenerMascotasDatos(API_Mascotas, function crearAnimales(error,data){
             gatos.push(data.mascotas[i].image);
             nombresGatos.push(data.mascotas[i].name);
             razaGatos.push(data.mascotas[i].race);
+            descriGatos.push(data.mascotas[i].description);
+            generoGatos.push(data.mascotas[i].gender);
+            direccionGatos.push(data.mascotas[i].address);
+            caracteristicasGatos.push(data.mascotas[i].feature);
+            personalidadGatos.push(data.mascotas[i].personality);
+            nombreAutorGato.push(data.mascotas[i].author.name);
+            imagenAutorGato.push(data.mascotas[i].author.image);
+            edadGato.push(data.mascotas[i].age);
+
         }
         console.log(data.mascotas[i].image);
         console.log("perros: ",perros[i]);
@@ -125,11 +134,57 @@ function mostrarGatos(){
 function verDetalle(indice,tipoAnimal){
     // Tipo animal es 0 cuando es perro y 1 cuando es gato
     // window.location.href = "http://www.informaticapc.com/";
-    
+    if(tipoAnimal===0){
+
+        let DetalleAnimal={
+            nombreAnimal:nombresPerros[indice],
+            imagenAnimal:perros[indice],
+            razaAnimal:razaPerros[indice],
+            descripcionAnimal:descriPerros[indice],
+            generoAnimal:generoPerros[indice],
+            direccionAnimal:direccionPerros[indice],
+            caracteristicasAnimal:caracteristicaPerros[indice],
+            personalidadAnimal:personalidadPerros[indice],
+            nombreAutor:nombreAutorPerro[indice],
+            imagenAutor:imagenAutorPerro[indice],
+            edad:edadPerro[indice]
+        }
+
+        localStorage.setItem("detalleMascota",JSON.stringify(DetalleAnimal));
+    }
+
+    else{
+        // let DetalleAnimal{
+        
+        // }
+        let DetalleAnimal={
+            nombreAnimal:nombresGatos[indice],
+            imagenAnimal:gatos[indice],
+            razaAnimal:razaGatos[indice],
+            descripcionAnimal:descriGatos[indice],
+            generoAnimal:generoGatos[indice],
+            direccionAnimal:direccionGatos[indice],
+            caracteristicasAnimal:caracteristicasGatos[indice],
+            personalidadAnimal:personalidadGatos[indice],
+            nombreAutor:nombreAutorGato[indice],
+            imagenAutor:imagenAutorGato[indice],
+            edad:edadGato[indice]
+                
+            
+        }
+        localStorage.setItem("detalleMascota",JSON.stringify(DetalleAnimal));
+    }
     window.location.href = "detalleAnimal.html";
 
 
 }
+
+
+
+
+
+
+
 function clickHome(){
 
     botonHome.className += " btn-dark";

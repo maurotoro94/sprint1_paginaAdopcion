@@ -101,6 +101,28 @@
   justify-content: center;
 
 }
+#cuerpoDetalle{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header1{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.desc1{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+
+.div1_desc1{
+  margin-right: 20px;
+}
 
 .divisionMascotas{
   padding-bottom:120px;
@@ -137,6 +159,11 @@
   opacity: 0.9;
 }
 
+.fa-arrow-circle-left{
+  color:rgb(14, 23, 44);
+
+}
+
 @media only screen and (max-width : 900px) {
    .btn-inicio{
     width: 100%;
@@ -152,6 +179,25 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
+  }
+
+  #tarjetaDetalle{
+    width: 100%;
+  }
+  .header1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .desc1{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+  }
+  
+  .div1_desc1{
+    margin-right: 20px;
   }
 }
 
