@@ -32,8 +32,8 @@ function verDetalle(){
         imgGenero= "./imagenes/femenino.PNG"
       }
     detalleAnimales.innerHTML=
-    "<div class='card' id='tarjetaDetalle' style='width:50%;'>"+
-    "<img class='card-img-top' src='"+imagen+"' alt='Card image'>"+
+    "<div class='card' id='tarjetaDetalle'>"+
+    "<img class='card-img-top' src='"+imagen+"' style='width: 100%;' alt='Card image'>"+
     "<div id='botonVolver' class='card-img-overlay h-100 d-flex flex-column justify-content-top'><a href='info2.html'><i class='fas fa-arrow-circle-left'></i></a></div>";
     
     detalleAnimales.innerHTML+=
