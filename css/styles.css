@@ -106,6 +106,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
 }
 
 .header1{
@@ -159,12 +160,67 @@
   opacity: 0.9;
 }
 
+.flexPersonalidad{
+  display: flex;
+  flex-direction: row;  
+  justify-content: space-between;
+}
+
+.flexPersonalidad .card-personalidad{
+  margin-right: 15px;
+  text-align: center;
+  padding: 5px 5px;
+  border-color: rgb(167, 134, 223);
+  border-width: 3px;
+  min-width: 33%;
+}
+
+
 .fa-arrow-circle-left{
   color:rgb(14, 23, 44);
 
 }
 
+#HistoriaMascota{
+  padding-left: 8rem;
+
+}
+
+#InformacionAutor{
+  display: flex;
+  flex-direction: row;  
+  justify-content: space-between;
+  align-items: center;
+}
+
+#InformacionAutor .div1_desc1{
+  width: 40%;
+  display: flex;
+  flex-direction: row;  
+  justify-content: left;
+  margin-left: 0;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#InformacionAutor .div1_desc1 .div{
+  padding-right: 10px;
+  color: rgb(19,28,48);
+  justify-content: center;
+  align-content: center;
+}
+
+#InformacionAutor .div1_desc1 p{
+  padding-right: 10px;
+  color:gray;
+}
+
 @media only screen and (max-width : 900px) {
+  #HistoriaMascota{
+    padding-left: 1rem;
+  }
+  
    .btn-inicio{
     width: 100%;
     margin: 10px 5px 5px 5px ;
@@ -184,6 +240,11 @@
   #tarjetaDetalle{
     width: 100%;
   }
+
+  #cuerpoDetalle .card-body{
+    width: 100%;
+    color: gray;
+  }
   .header1{
     display: flex;
     flex-direction: row;
@@ -199,6 +260,7 @@
   .div1_desc1{
     margin-right: 20px;
   }
+
 }
 
 #mainNav{
@@ -4448,12 +4510,36 @@ textarea.form-control-lg {
 .card-body {
   flex: 1 1 auto;
   padding: 1rem 1rem;
+  font-size: 25px;
 }
 
 .card-title {
   margin-bottom: 0.5rem;
+  font-size: 30px;
+  color:white;
 }
 
+
+.card-body .card-title{
+  margin-bottom: 2rem;
+  font-size: 30px;
+  color:black;
+  
+
+}
+
+
+.imagenRedonda{
+  border-radius:75px;
+  width: 150px;
+  height: 150px;
+  margin-right: 2rem;
+  border:10px solid rgb(170,209,207);
+}
+
+.card-body #divPersonalidad{
+  margin-top: 2rem;
+}
 .card-subtitle {
   margin-top: -0.25rem;
   margin-bottom: 0;
@@ -4461,6 +4547,8 @@ textarea.form-control-lg {
 
 .card-text:last-child {
   margin-bottom: 0;
+  font-size: 25px;
+  color:gray;
 }
 
 .card-link:hover {

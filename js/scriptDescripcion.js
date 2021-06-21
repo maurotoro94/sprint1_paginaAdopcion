@@ -11,6 +11,7 @@ let personalidad=[];
 let nombreAutor=[];
 let imagenAutor=[];
 let edadMascota=[];
+let textoPersonalidad="";
 
 function verDetalle(){
     var imgGenero = "./imagenes/masculino.PNG";
@@ -34,7 +35,7 @@ function verDetalle(){
     detalleAnimales.innerHTML=
     "<div class='card' id='tarjetaDetalle'>"+
     "<img class='card-img-top' src='"+imagen+"' style='width: 100%;' alt='Card image'>"+
-    "<div id='botonVolver' class='card-img-overlay h-100 d-flex flex-column justify-content-top'><a href='info2.html'><i class='fas fa-arrow-circle-left'></i></a></div>";
+    "<div id='botonVolver' class='card-img-overlay h-100 d-flex flex-column justify-content-top'><a href='info2.html'><i class='fas fa-arrow-circle-left fa-5x'></i></a></div>";
     
     detalleAnimales.innerHTML+=
     "<div class='card-body'>"+
@@ -46,9 +47,50 @@ function verDetalle(){
       "<div class='div1_desc1 card-text'>"+"<img src='"+"./imagenes/raza.PNG" +"'>"+raza+"</div>"+
       "<div class='div2_desc1 card-text'>"+"<img src='"+"./imagenes/edad.PNG" +"'>"+edadMascota+"</div>"+
       "</div>"+
-      "<p class='card-text'>"+descripcion+"</p>";
+      "<div class='desc1'>"+
+      "<div class='div1_desc1 card-text'>"+"<img src='"+"./imagenes/ubicacion.PNG" +"'>"+direccion+"</div>"+
+      "</div>"+
+      "<div id='divPersonalidad'>"+
+      "<div class='div1_desc1 card-text' style='margin-top: 14px;'><h5 class='card-title'>Personalidad</h5></div>"+
+      "</div>";
+      
+      for(i=0;i< personalidad.length;i++){
 
-    detalleAnimales.innerHTML+=  "</div>"+
+         if(personalidad[i]==="Juguetón"){
+          textoPersonalidad+= "<div class='card card-personalidad justify-content-end'><img class='card-img-center' src='"+ "./imagenes/jugueton.PNG"+"'>"+
+          "<div class='card-text justify-content-top'>Juguetón</div>"
+          +"</div>";
+         } 
+
+         else if(personalidad[i]==="Tierno"){
+          textoPersonalidad+= "<div class='card card-personalidad justify-content-end'><img class='card-img-top' src='"+ "./imagenes/tierno.PNG"+"'>"+
+          "<div class='card-text'>Tierno</div>"
+          +"</div>";
+         } 
+
+         else if(personalidad[i]==="Cariñoso"){
+          textoPersonalidad+= "<div class='card card-personalidad justify-content-end'><img class='card-img-center' src='"+ "./imagenes/carinoso.PNG"+"'>"+
+          "<div class='card-text'>Cariñoso</div>"
+          +"</div>";
+         } 
+
+         else if(personalidad[i]==="Inquieto"){
+          textoPersonalidad+= "<div class='card card-personalidad justify-content-end'><img class='card-img-center' src='"+ "./imagenes/inquieto.PNG"+"'>"+
+          "<div class='card-text'>Inquieto</div>"
+          +"</div>";
+         } 
+         console.log(personalidad[i]);         
+      }
+    detalleAnimales.innerHTML+="<div class='flexPersonalidad'>"+textoPersonalidad+"</div>";
+    detalleAnimales.innerHTML+="<div class='card-body' id='HistoriaMascota'>"+
+    "<div class='div1_desc1 card-text' style='margin-top: 14px;'><h5 class='card-title'>Historia de "+nombres+"</h5>"+
+    "<p class='card-text'>"+descripcion+"</p>"+"</div>"+
+    "</div>";
+    detalleAnimales.innerHTML+="<div class='desc1' id='InformacionAutor'>"+
+    "<div class='div1_desc1 card-text'>"+"<div><img class='imagenRedonda' src='"+imagenAutor+"'></div>"+"<div><p>Publicado por</p>"+nombreAutor+"</div>"+"</div>"+
+    "<div class='div2_desc1 card-text'>"+"<a class='btn btn-dark btn-inicio' href='#' role='button'>Contactar</a></div>"+
+    "</div>";
+    detalleAnimales.innerHTML+="</div>"+
     "</div>";
  
 }
